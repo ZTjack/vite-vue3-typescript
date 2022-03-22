@@ -9,5 +9,15 @@ export default defineConfig({
     alias: {
       '@': resolve(__dirname, 'src')
     }
+  },
+  server: {
+    port: 9527,
+    open: true,
+    proxy: {
+      '/api': {
+        target: 'https://www.camstage.org',
+        changeOrigin: true
+      }
+    }
   }
 })
