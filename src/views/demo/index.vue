@@ -1,3 +1,13 @@
+<template>
+  <div>
+    用户名:{{ mainStore.name }}
+    <br />
+    长度:{{ mainStore.nameLength }}
+  </div>
+  <hr />
+  <button @click="updateName">修改store中的name</button>
+</template>
+
 <script setup lang="ts">
 import { MainStore } from '@/store/main'
 
@@ -11,12 +21,8 @@ const updateName = () => {
 }
 </script>
 
-<template>
-  <div>
-    用户名:{{ mainStore.name }}
-    <br />
-    长度:{{ mainStore.nameLength }}
-  </div>
-  <hr />
-  <button @click="updateName">修改store中的name</button>
-</template>
+<script lang="ts">
+export default {
+  name: 'Demo'
+}
+</script>
